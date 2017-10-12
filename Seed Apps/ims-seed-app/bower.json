@@ -1,0 +1,20 @@
+{
+  "name": "ims-seed-app",
+  "version": "0.0.1",
+  "description": "Seed app to show data from Predix Intelligent Mapping service on a map",
+  "homepage": "https://github.com/ge-smallworld/ims-seed-app.git",
+  "authors": [
+    "General Electric"
+  ],
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "^1.9.1",
+    "px-theme": "^2.0.4",
+    "px-map": "^1.4.5",
+    "iron-ajax": "^1.4.3"
+  },
+  "resolutions": {
+    "iron-ajax": "^1.4.3"
+  }
+}
