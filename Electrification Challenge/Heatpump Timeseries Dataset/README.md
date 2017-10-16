@@ -37,9 +37,9 @@ You can combine this data with any other relevant data accessible on the web. Fo
 
 This data is accessible in two formats:
 - A Predix Time series instance that you can access read-only using the following references:
-  - UAA URL: https://MMEurope.predix-uaa.run.aws-usw02-pr.ice.predix.io
+  - UAA URL: https://0f074596-79e5-4a1d-8900-707be1c73815.predix-uaa.run.aws-usw02-pr.ice.predix.io
   - ClientID: timeseries_client_readonly
   - Client Secret: secret
-  - Timeseries ZoneID: 6e5d6150-f172-49f4-9867-24e8b47112da
+  - Timeseries ZoneID: d23057a0-0cd3-4f50-ae72-918883641e98
 
 - The original CSV files on the Hackathon GitHub repo to perform a preliminary exploration. Please note that your prototype should be deployed on Predix and access data from Predix.
