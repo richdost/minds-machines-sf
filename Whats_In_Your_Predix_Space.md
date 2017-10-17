@@ -24,24 +24,11 @@ https://mmeurope-ui-team#.run.aws-usw02-pr.ice.predix.io
 
 **The source code of this app can be found in the "Seed app" folder in this GitHub repo.**
 
-### MMEurope-ui-intelligent-mapping
-
-We deployed a 'MMEurope-ui-intelligent-mapping' app to show you how to request and plot GIS data stored in the Intelligent Mapping service instance deployed in your team space.
-
-You can give it a try (replace # with your team number):
-- App URL:
-https://mmeurope-ui-intelligent-mapping-team#.run.aws-usw02-pr.ice.predix.io
-- UserID: TEAM_#
-- User Secret: TEAM_#
-
-**The source code of this app can be found in the "Seed app" folder in this GitHub repo.**
-
 ## SERVICES
 
 In your space you are going to see multiple services:
 * **MMEurope-uaa**
 * **MMEurope-analyticsFramework**
-* **MMEurope-intelligentMapping**
 * **MMSanFrancisco_timeseries_heatPump** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
 * **MMSanFrancisco_timeseries_loadData** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
 * **MMSanFrancisco_uaa_admin** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
@@ -62,16 +49,6 @@ We already created 1 UAA client and 1 user:
 
 We provisionned a Predix Analytics framework service instance in your team space. It is already configured with the client created in your 'MMEurope-uaa' UAA instance.
 If you want to use analytics from Predix Catalog, you can see the [documentation here](https://docs.predix.io/en-US/content/service/analytics_services/analytics_framework/get-started).
-
-### MMEurope-intelligentMapping
-
-GE Energy Connections provides a mapping service on Predix: Intelligent Mapping that stores the location and properties of static assets.
-
-We created an Intelligent Mapping service instance in your team space and ingested GIS GeoJSON data from ESB into this instance. You can find the original [ESB data here](https://github.com/PredixDev/minds-machines-europe/tree/GIS_geojson_data/Electrification%20Challenge/Grid%20GIS%20Dataset).
-
-You can find the Intelligent Mapping service API [documentation here](https://sw-intelligent-mapping.github.io/smallworld-mapping-services/#MappingServices/IMSapis.htm%3FTocPath%3DGetting%2520started%2520with%2520Intelligent%2520Mapping%2520and%2520Dynamic%2520Mapping%2520services%7C_____8).
-
-**NB:** 'x-subtenant-id' or 'subtenantId' is the same id that your intelligent Mapping service ZoneId.
 
 ### MMSanFrancisco_timeseries_heatPump
 
