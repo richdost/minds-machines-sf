@@ -38,30 +38,30 @@ const getCredentials = {
             ]
         };
     },
-    MMEurope_timeseries_heatPump: function (config, credentials) { // eslint-disable-line camelcase
+    MMSanFrancisco_timeseries_heatPump: function (config, credentials) { // eslint-disable-line camelcase
         // The uri exposed in VCAP for timeseries contains the path to query datapoints
         const uri = url.parse(credentials.query.uri);
 
-        config.proxy.MMEurope_timeseries_heatPump = { // eslint-disable-line camelcase
+        config.proxy.MMSanFrancisco_timeseries_heatPump = { // eslint-disable-line camelcase
             endpoint: uri.protocol + "//" + uri.host,
             headers: [
                 [credentials.query["zone-http-header-name"], credentials.query["zone-http-header-value"]]
             ]
         };
     },
-    MMEurope_timeseries_loadData: function (config, credentials) { // eslint-disable-line camelcase
+    MMSanFrancisco_timeseries_loadData: function (config, credentials) { // eslint-disable-line camelcase
         // The uri exposed in VCAP for timeseries contains the path to query datapoints
         const uri = url.parse(credentials.query.uri);
 
-        config.proxy.MMEurope_timeseries_loadData = { // eslint-disable-line camelcase
+        config.proxy.MMSanFrancisco_timeseries_loadData = { // eslint-disable-line camelcase
             endpoint: uri.protocol + "//" + uri.host,
             headers: [
                 [credentials.query["zone-http-header-name"], credentials.query["zone-http-header-value"]]
             ]
         };
     },
-    MMEurope_uaa_admin: function (config, credentials) { // eslint-disable-line camelcase
-        config.proxy.MMEurope_uaa_admin = { // eslint-disable-line camelcase
+    MMSanFrancisco_uaa_admin: function (config, credentials) { // eslint-disable-line camelcase
+        config.proxy.MMSanFrancisco_uaa_admin = { // eslint-disable-line camelcase
             uaaUri: credentials.uri,
             clientId: "timeseries_client_readonly",
             clientSecret: "secret"

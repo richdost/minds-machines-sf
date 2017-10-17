@@ -3,7 +3,7 @@
 ## Overview
 The hackathon challenge and all logistics can be found here: https://mmsf17.devpost.com/
 
-Completed projects are due at **4pm Wednesday October 25th** and must be submitted here: https://mmsf17.devpost.com/submissions 
+Completed projects are due at **4pm Wednesday October 25th** and must be submitted here: https://mmsf17.devpost.com/submissions
 
 This requires you create a devpost account in order to be eligible for a prize. Please make sure you have consulted the requirements that are specific to each challenge / dataset.
 

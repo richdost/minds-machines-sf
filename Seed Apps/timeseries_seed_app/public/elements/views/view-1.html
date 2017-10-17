@@ -12,10 +12,10 @@ import is done in ge-app since it is needed by both views
     <template>
         <px-view-header title="Dashboard"></px-view-header>
         <df-timeseries-ajax-client id="tsTagClient" method="GET"
-                                   service-endpoint="/api/MMEurope_timeseries_heatPump/v1/tags"
+                                   service-endpoint="/api/MMSanFrancisco_timeseries_loadData/v1/tags"
                                    raw-ts-data="{{rawTsTagData}}" auto></df-timeseries-ajax-client>
         <df-timeseries-ajax-client id="tsDataClient" start="10y-ago"
-                                   service-endpoint="/api/MMEurope_timeseries_heatPump/v1/datapoints"
+                                   service-endpoint="/api/MMSanFrancisco_timeseries_heatPump/v1/datapoints"
                                    tags="[[selectedTag]]"
                                    raw-ts-data="{{rawTsData}}"></df-timeseries-ajax-client>
         <px-card >

@@ -94,6 +94,7 @@ function getClientToken(successCallback, errorCallback) {
         if (!err && response.statusCode === HTTP_OK_STATUS) {
             // Debug console.log("response from getClientToken: " + body);
             clientTokenResponse = JSON.parse(body);
+            console.log("Success!")
             successCallback(clientTokenResponse);
         } else if (errorCallback) {
             errorCallback(body);
@@ -106,14 +107,14 @@ function getClientToken(successCallback, errorCallback) {
 function getCupsClientToken(successCallback, errorCallback) {
     const options = {
         method: "POST",
-        url: config.proxy.MMEurope_uaa_admin.uaaUri + "/oauth/token",
+        url: config.proxy.MMSanFrancisco_uaa_admin.uaaUri + "/oauth/token",
         form: {
             grant_type: "client_credentials", // eslint-disable-line camelcase
-            client_id: config.proxy.MMEurope_uaa_admin.clientId // eslint-disable-line camelcase
+            client_id: config.proxy.MMSanFrancisco_uaa_admin.clientId // eslint-disable-line camelcase
         },
         headers: {
-            Authorization: "Basic " + getBase64Credential(config.proxy.MMEurope_uaa_admin.clientId,
-                config.proxy.MMEurope_uaa_admin.clientSecret)
+            Authorization: "Basic " + getBase64Credential(config.proxy.MMSanFrancisco_uaa_admin.clientId,
+                config.proxy.MMSanFrancisco_uaa_admin.clientSecret)
         }
     };
 

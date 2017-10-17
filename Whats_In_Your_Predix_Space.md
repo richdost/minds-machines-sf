@@ -42,9 +42,9 @@ In your space you are going to see multiple services:
 * **MMEurope-uaa**
 * **MMEurope-analyticsFramework**
 * **MMEurope-intelligentMapping**
-* **MMEurope_timeseries_heatPump** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
-* **MMEurope_timeseries_loadData** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
-* **MMEurope_uaa_admin** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
+* **MMSanFrancisco_timeseries_heatPump** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
+* **MMSanFrancisco_timeseries_loadData** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
+* **MMSanFrancisco_uaa_admin** [(CUPS)](https://docs.cloudfoundry.org/devguide/services/user-provided.html)
 
 ### MMEurope-uaa
 
@@ -73,7 +73,7 @@ You can find the Intelligent Mapping service API [documentation here](https://sw
 
 **NB:** 'x-subtenant-id' or 'subtenantId' is the same id that your intelligent Mapping service ZoneId.
 
-### MMEurope_timeseries_heatPump
+### MMSanFrancisco_timeseries_heatPump
 
 We have ingested all the EHPA/Fraunhofer heat pump data into a Time Series instance located in our admin space. ([documentation](https://docs.predix.io/en-US/content/service/data_management/time_series/) about Time Series)
 
@@ -81,9 +81,9 @@ You have access to this Time Series instance in read-only mode.You’ll find how
 
 **NB:**
 - The time series instance is **not in your space** but in an admin space. The service you can see in your space is a [**cups**](https://docs.cloudfoundry.org/devguide/services/user-provided.html).
-- MMEurope_timeseries_heatPump & MMEurope_timeseries_loadData are not the same TimeSeries instance.
+- MMSanFrancisco_timeseries_heatPump & MMSanFrancisco_timeseries_loadData are not the same TimeSeries instance.
 
-### MMEurope_timeseries_loadData
+### MMSanFrancisco_timeseries_loadData
 
 We store all data from load data and weather data into a Time Series instance ([documentation](https://docs.predix.io/en-US/content/service/data_management/time_series/) about Time Series)
 
@@ -91,9 +91,9 @@ You have access our Time Series instance only in read only.You’ll find how to 
 
 **NB:**
 - The time series instance is **not in your space** but in an admin space. The service you can see in your space is a [**cups**](https://docs.cloudfoundry.org/devguide/services/user-provided.html)  
-- MMEurope_timeseries_heatPump & MMEurope_timeseries_loadData are not the same TimeSeries instance.
+- MMSanFrancisco_timeseries_heatPump & MMSanFrancisco_timeseries_loadData are not the same TimeSeries instance.
 
-#### MMEurope_uaa_admin
+#### MMSanFrancisco_uaa_admin
 To access our two Admin TimeSeries instances, you need credentials and token. So, we have created a [**cups**](https://docs.cloudfoundry.org/devguide/services/user-provided.html) in order to easily bind this UAA for TimeSeries with your app.
 
 **NB:** With this cups you can only get informations to request data on our two TimeSeries instances. For app authentication, analytics framework, intelligent-mapping,..., you have to use your own UAA instance called **MMEurope-uaa**.
