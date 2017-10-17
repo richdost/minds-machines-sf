@@ -6,7 +6,7 @@
 
 <!-- app route -->
 <link rel="import" href="../../bower_components/app-route/app-location.html">
-<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/px-app-helpers/px-app-route/px-app-route.html"/>
 
 <!-- px components -->
 <link rel="import" href="../../bower_components/px-app-nav/px-app-nav.html">
@@ -44,42 +44,32 @@
         </header>
 
         <div class="viewport">
-
+            <px-app-nav
+                items="{{navItems}}"
+                selected-route={{selectedNavRoute}}>
+            </px-app-nav>
             <div class="content-wrapper">
-                <px-app-nav
-                    class="navbar"
-                    nav-items="[[navItems]]"
-                    path-prefix="[[pathPrefix]]">
-                </px-app-nav>
-
                 <main role="main">
-
-                    <!-- app-location captures url and assigns _route value -->
+                    <!-- app-location captures url and assigns navRoute value -->
                     <app-location
                         id="carbonLocation"
-                        route="{{_route}}"
-                        url-space-regex="^/view">
+                        route="{{route}}">
                     </app-location>
 
                     <!-- /view1 route and view -->
-                    <app-route
-                        route="[[_route]]"
-                        pattern="/view-1"
-                        active="{{_view1Active}}">
-                    </app-route>
+                    <px-app-route
+                        route="{{route}}"
+                        update-nav-route
+                        nav-route="{{selectedNavRoute}}">
+                    </px-app-route>
+
                     <px-view
-                        active="[[_view1Active]]"
+                        active="[[view1Active]]"
                         element-href="./elements/views/view-1.html">
                     </px-view>
 
-                    <!-- /view2 route and view -->
-                    <app-route
-                        route="[[_route]]"
-                        pattern="/view-2"
-                        active="{{_view2Active}}">
-                    </app-route>
                     <px-view
-                        active="[[_view2Active]]"
+                        active="[[view2Active]]"
                         element-href="./elements/views/view-2.html">
                     </px-view>
                 </main>
@@ -110,6 +100,19 @@
                     }
                 },
 
+                view1Active: {
+                    type: Boolean
+                },
+
+                view2Active: {
+                    type: Boolean
+                },
+
+                selectedNavRoute: {
+                    type: String,
+                    observer: "observerSelectRoute"
+                },
+
                 navItems: {
                     type: Array,
                     value: function () {
@@ -117,15 +120,15 @@
                             {
                                 icon: "fa-tachometer",
                                 label: "View 1",
-                                path: "view-1"
+                                id: "view-1"
                             }, {
                                 icon: "fa-file",
                                 label: "View 2",
-                                path: "view-2"
+                                id: "view-2"
                             }, {
                                 icon: "fa-sign-out",
                                 label: "Sign out",
-                                path: "logout"
+                                id: "logout"
                             }
                         ];
                     }
@@ -161,11 +164,6 @@
                 },
 
                 // Sets app default base URL for client-side routing
-                pathPrefix: {
-                    type: String,
-                    value: "/"
-                },
-
                 routesActive: {
                     type: Boolean,
                     value: false
@@ -174,6 +172,18 @@
 
             ready: function () {
                 this._checkForDefaultRoute();
+            },
+
+            observerSelectRoute: function () {
+              if (this.selectedNavRoute) {
+                if (this.selectedNavRoute.includes("view-1")) {
+                   this.view1Active = true;
+                   this.view2Active = false;
+                } else {
+                   this.view1Active = false;
+                   this.view2Active = true;
+                }
+              }
             },
 
             _checkForDefaultRoute: function () {

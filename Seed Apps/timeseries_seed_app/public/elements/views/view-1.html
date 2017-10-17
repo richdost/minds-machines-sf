@@ -15,15 +15,17 @@ import is done in ge-app since it is needed by both views
                                    service-endpoint="/api/MMSanFrancisco_timeseries_loadData/v1/tags"
                                    raw-ts-data="{{rawTsTagData}}" auto></df-timeseries-ajax-client>
         <df-timeseries-ajax-client id="tsDataClient" start="10y-ago"
-                                   service-endpoint="/api/MMSanFrancisco_timeseries_heatPump/v1/datapoints"
+                                   service-endpoint="/api/MMSanFrancisco_timeseries_loadData/v1/datapoints"
                                    tags="[[selectedTag]]"
                                    raw-ts-data="{{rawTsData}}"></df-timeseries-ajax-client>
         <px-card >
-            <px-dropdown display-value="Select" selected-key="{{selectedTagKey}}">
-                <px-dropdown-content
-                    max-cont-character-width="50"
-                    items="[[tsTagList]]"></px-dropdown-content>
-            </px-dropdown>
+          <px-dropdown
+            items="[[tsTagList]]"
+            sort-mode="key"
+            button-style="default"
+            display-value="Select"
+            selected="{{selectedTagKey}}">
+          </px-dropdown>
 
             <div>
                 <div>

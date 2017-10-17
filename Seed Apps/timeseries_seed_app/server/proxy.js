@@ -94,7 +94,6 @@ function getClientToken(successCallback, errorCallback) {
         if (!err && response.statusCode === HTTP_OK_STATUS) {
             // Debug console.log("response from getClientToken: " + body);
             clientTokenResponse = JSON.parse(body);
-            console.log("Success!")
             successCallback(clientTokenResponse);
         } else if (errorCallback) {
             errorCallback(body);
@@ -209,7 +208,7 @@ function setProxyRoute(key, serviceConfig) {
         decorator = buildDecorator(serviceConfig.headers);
         pathCalculator = buildPathCalculator(serviceConfig.endpoint);
 
-        if (key.startsWith("MMEurope")) {
+        if (key.startsWith("MMSanFrancisco")) {
             router.use("/" + key, addCupsClientTokenMiddleware);
         } else {
             router.use("/" + key, addClientTokenMiddleware);
