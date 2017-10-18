@@ -3,53 +3,73 @@
 <link rel="import" href="../../bower_components/px-vis-timeseries/px-vis-timeseries.html">
 <link rel="import" href="../df-timeseries-ajax-client/df-timeseries-ajax-client.html">
 
+<link rel="import" href="../../bower_components/px-card/px-card.html">
+<link rel="import" href="../../bower_components/px-rangepicker/px-rangepicker.html">
+<!-- Since this is loading asynchronously, we're not loading px-dropdown here for now.
+      it's already loaded by rmd-view. -->
+<link rel="import" href="timeseries-chart-styles.html">
+<!-- Use light theme in this component, not the app's dark theme. -->
+<link rel="import" href="../../bower_components/px-theme/px-theme-styles.html">
+<script src="../../bower_components/moment/min/moment.min.js"></script>
+
 <!--
-import is done in ge-app since it is needed by both views
+import is done in seef-app since it is needed by both views
 <link rel="import" href="../../bower_components/px-card/px-card.html">
 -->
 
 <dom-module id="view-1">
     <template>
-        <px-view-header title="Dashboard"></px-view-header>
+        <style include="px-theme-styles">
+          px-card {
+            background: white;
+          }
+        </style>
+        <style include="timeseries-chart-styles"></style>
+
         <df-timeseries-ajax-client id="tsTagClient" method="GET"
-                                   service-endpoint="/api/MMSanFrancisco_timeseries_loadData/v1/tags"
+                                   service-endpoint="/api/MMSanFrancisco_timeseries_heatPump/v1/tags"
                                    raw-ts-data="{{rawTsTagData}}" auto></df-timeseries-ajax-client>
         <df-timeseries-ajax-client id="tsDataClient" start="10y-ago"
-                                   service-endpoint="/api/MMSanFrancisco_timeseries_loadData/v1/datapoints"
+                                   service-endpoint="/api/MMSanFrancisco_timeseries_heatPump/v1/datapoints"
                                    tags="[[selectedTag]]"
                                    raw-ts-data="{{rawTsData}}"></df-timeseries-ajax-client>
-        <px-card >
-          <px-dropdown
-            items="[[tsTagList]]"
-            sort-mode="key"
-            button-style="default"
-            display-value="Select"
-            selected="{{selectedTagKey}}">
-          </px-dropdown>
 
-            <div>
-                <div>
-                    <px-vis-timeseries
-                        debounce-resize-timing="250"
-                        progressive-rendering-points-per-frame="16000" progressive-rendering-min-frames="1"
-                        chart-horizontal-alignment="center" chart-vertical-alignment="top"
-                        margin='{"top":0,"bottom":60,"left":65,"right":35}'
-                        show-tooltip
-                        register-config='{"type": "horizontal", "truncationLength" : 20}'
-                        selection-type="xAxis"
-                        chart-data="{{chartData}}"
-                        series-config="{{chartConfig}}"
-                        chart-extents='{"x":["dynamic","dynamic"],"y":["dynamic","dynamic"]}'
-                        x-axis-config='{"title":"Time", "ticks": {"interval" : 3, "format": "%H:%M:%S"}}'
-                        x-axis-type="timeLocal"
-                        y-axis-config='{"title": "Data", "truncationLength" : 20}'
-                        toolbar-config='{"config": {}}'
-                        width="700"
-                        height="450"
-                        disable-navigator>
-                    </px-vis-timeseries>
-                </div>
+        <px-card header-text="Load Data" icon="px-fea:analysis">
+          <div class="u-1/4-desk u-1/1-palm">
+            <div class="u-pr">
+              <px-dropdown
+                items="[[tsTagList]]"
+                sort-mode="key"
+                button-style="default"
+                display-value="Select"
+                selected="{{selectedTagKey}}">
+              </px-dropdown>
             </div>
+          </div>
+
+          <div>
+              <div>
+                  <px-vis-timeseries
+                      debounce-resize-timing="250"
+                      progressive-rendering-points-per-frame="16000" progressive-rendering-min-frames="1"
+                      chart-horizontal-alignment="center" chart-vertical-alignment="top"
+                      margin='{"top":0,"bottom":60,"left":65,"right":35}'
+                      show-tooltip
+                      register-config='{"type": "horizontal", "truncationLength" : 20}'
+                      selection-type="xAxis"
+                      chart-data="{{chartData}}"
+                      series-config="{{chartConfig}}"
+                      chart-extents='{"x":["dynamic","dynamic"],"y":["dynamic","dynamic"]}'
+                      x-axis-config='{"title":"Time", "ticks": {"interval" : 3, "format": "%H:%M:%S"}}'
+                      x-axis-type="timeLocal"
+                      y-axis-config='{"title": "Data", "truncationLength" : 20}'
+                      toolbar-config='{"config": {}}'
+                      width="700"
+                      height="450"
+                      disable-navigator>
+                  </px-vis-timeseries>
+              </div>
+          </div>
         </px-card>
 
 

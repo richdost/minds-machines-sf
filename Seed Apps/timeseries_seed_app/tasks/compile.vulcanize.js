@@ -1,7 +1,7 @@
 "use strict";
 
 // -------------------------------------------
-//   Task: Compile: Vulcanize ge-app element
+//   Task: Compile: Vulcanize seed-app element
 // -------------------------------------------
 
 const vulcanize = require("gulp-vulcanize");
@@ -10,7 +10,7 @@ const htmlMinifier = require("gulp-html-minifier");
 module.exports = function (gulp) {
     return function () {
         return gulp.src([
-            "public/elements/ge-app/ge-app.html",
+            "public/elements/seed-app/seed-app.html",
             "public/elements/views/*.html"
         ], {base: "public/"})
             .pipe(vulcanize({

@@ -20,7 +20,7 @@ gulp.task("compile:sass", getTask("compile.sass"));
 gulp.task("compile:index", getTask("compile.index"));
 gulp.task("compile:vulcanize:libs", getTask("compile.vulcanize.libs"));
 gulp.task("compile:vulcanize", getTask("compile.vulcanize"));
-// gulp.task("lint", getTask("lint"));
+//gulp.task("lint", getTask("lint"));
 
 // -----------------------------------------------------------------------------
 // Task: Serve : Start

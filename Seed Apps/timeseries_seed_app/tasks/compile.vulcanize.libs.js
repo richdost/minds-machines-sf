@@ -1,7 +1,7 @@
 "use strict";
 
 // -------------------------------------------
-//   Task: Compile: Vulcanize ge-app element
+//   Task: Compile: Vulcanize seed-app element
 // -------------------------------------------
 
 const vulcanize = require("gulp-vulcanize");

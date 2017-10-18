@@ -21,6 +21,7 @@
     "px-view": "1.1.x",
     "px-card": "1.0.x",
     "px-view-header": "1.0.x",
+    "px-login": "2.0.x",
     "iron-ajax": "^2.0.0",
     "lodash": "^4.16.0",
     "px-dropdown": "4.0.x",
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "iron-test-helpers": "PolymerElements/iron-test-helpers#1.4.1",
+    "px-theme": "^3.0.0",
+    "px-dark-theme": "^2.0.0",
     "px-flexbox-design": "1.0.x",
     "px-viewport-design": "1.0.x",
     "px-defaults-design": "2.0.x",
@@ -42,6 +45,7 @@
     "px-buttons-design": "2.0.x",
     "px-spacing-design": "1.0.x",
     "px-layout-design": "1.0.x",
+    "px-widths-responsive-design": "^1.0.0",
     "web-component-tester": "^6.0.0"
   }
 }
