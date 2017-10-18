@@ -15,9 +15,9 @@ Your team can also take up a **Developer Kit** complementary challenge using a P
 
 Electric vehicles, distributed renewable energy, and electric building heating can drive decarbonization and economic value.  The grid needs to keep up!  Innovate solutions for electrification, and evaluate decarbonization impact. This challenge deals with: Renewable energy resource siting; electric heating & conversion to heat pumps analysis; EV charger siting; renewable energy integration.
 
-3 datasets are provided for this:
+2 datasets are provided for this:
 
-- **Grid GIS Dataset** Grid infrastructure mapping
+
 - **Grid Timeseries Dataset** Load forecasting & temperature correction on distribution circuits
 - **Heatpump Timeseries Dataset** Electric heating & conversion to heat pumps
 
@@ -28,6 +28,6 @@ You can find detailed information about each dataset inside its dedicated folder
 
 *Presented by Intel*
 
-Your mission is to address one of the problems related to sustainability. To boost your project prototype you can add connected hardware with Predix Edge to your solution. For instance you can build a heatpump simulator using the Kit to generate real-time temperature data and use it in your Predix cloud space.
+Your mission is to address one of the problems related to sustainability. To boost your project prototype you can add connected hardware with Predix Edge to your solution. 
 
 You can find detailed information in the "Intel Dev Kit" folder in this repo.
