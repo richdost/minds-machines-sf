@@ -16,28 +16,30 @@ At the Minds+Machines appathon, your mission is to address one of the problems i
 ## What is your team provided with?
 
 Each participating team will receive (while supply lasts):
-•	1 NUC board DE3815TYKE
-•	1 complete set of the “original” [intel gateway sensor kit](https://www.seeedstudio.com/Grove-IoT-Commercial-Gateway-Kit-p-2724.html)
-o	Sensors:
-	Grove – Button
-	Grove – Sound Sensor v1.2
-	Grove – Touch Sensor
-	Grove – Light Sensor v1.2
-	Grove – Temperature Sensor v1.1
-	Grove – Rotary Angle Sensor(p)
-	Grove – Piezo Vibration Sensor
-o	Actuators:
-	Grove – LCD RGB Backlight
-	Grove – Buzzer
-	Grove – Red LED
-	Grove – Green LED
-	Grove – Blue LED
-	Gear Stepper Motor with Driver
-o	Others:
-	Grove Base Shield v2
-	(14) 26AWG Grove Cables
-	Arduino or Genuino
-	B to A Type USB Cable – 0.5m
+
+- 1 NUC board DE3815TYKE
+- 1 complete set of the “original” [intel gateway sensor kit](https://www.seeedstudio.com/Grove-IoT-Commercial-Gateway-Kit-p-2724.html)
+  - Sensors:
+    - Grove – Button
+    - Grove – Sound Sensor v1.2
+    - Grove – Touch Sensor
+    - Grove – Light Sensor v1.2
+    - Grove – Temperature Sensor v1.1
+    - Grove – Rotary Angle Sensor(p)
+    - Grove – Piezo Vibration Sensor
+  - Actuators:
+    - Grove – LCD RGB Backlight
+    - Grove – Buzzer
+    - Grove – Red LED
+    - Grove – Green LED
+    - Grove – Blue LED
+    - Gear Stepper Motor with Driver
+  - Others:
+    - Grove Base Shield v2
+    - (14) 26AWG Grove Cables
+    - Arduino or Genuino
+    - B to A Type USB Cable – 0.5m
+
 
 In addition, 2 lots of 15 sets of alternate sensors will be available on demand:
 1.	First type of set is based upon a slightly modified version of https://wiki.openenergymonitor.org/index.php/EmonTx_Arduino_Shield and can monitor AC voltage and current
